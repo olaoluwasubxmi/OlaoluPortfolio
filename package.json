@@ -14,11 +14,12 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/runtime-corejs3": "^7.10.2",
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.35.1"
+    "sass": "^1.62.1"
   },
   "dependencies": {
-    "gsap": "^3.7.0",
-    "locomotive-scroll": "^4.1.1",
+    "gsap": "^3.11.5",
+    "locomotive-scroll": "^4.1.4",
+    "lodash": "^4.17.21",
     "regenerator-runtime": "^0.13.7"
   }
 }
