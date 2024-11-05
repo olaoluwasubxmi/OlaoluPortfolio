@@ -4,22 +4,48 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "dev": "rm -rf ./public && rm -rf ./.cache && parcel src/index.html -d public -p 3000",
-    "build": "parcel build src/index.html -d dist --public-url ./"
+    "start": "parcel src/index.html -d public -p 3000",
+    "dev": "rimraf \"./public\" \"./cache\" && yarn start",
+    "build": "rimraf dist && parcel build src/index.html -d dist --public-url ./",
+    "clean": "rimraf ./public ./cache ./dist",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss}\"",
+    "serve": "serve dist -s -n -p 3000"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "website",
+    "animation"
+  ],
+  "author": {
+    "name": "Olaolu",
+    "url": "https://github.com/OlaoluPortfolio"
+  },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/runtime-corejs3": "^7.10.2",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.62.1"
+    "@babel/core": "^7.23.7",
+    "@babel/plugin-transform-runtime": "^7.23.7",
+    "@babel/runtime-corejs3": "^7.23.7",
+    "@parcel/transformer-sass": "^2.11.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "parcel": "^2.11.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "serve": "^14.2.1"
   },
   "dependencies": {
-    "gsap": "^3.11.5",
+    "gsap": "^3.12.4",
     "locomotive-scroll": "^4.1.4",
-    "lodash": "^4.17.21",
-    "regenerator-runtime": "^0.13.7"
+    "lodash": "^4.17.21"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": ">=1.22.0"
   }
 }
